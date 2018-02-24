@@ -9,7 +9,10 @@
     "dev": "webpack && webpack-dev-server --progress --inline --open",
     "build": "webpack --config webpack.config.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "hogan.js": "^3.0.2",
+    "sweetalert": "^2.1.0"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.9",

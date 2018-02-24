@@ -57,6 +57,15 @@ module.exports = {
       }
     ]
   },
+  // 配置路径
+  resolve: {
+    alias: {
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      service: __dirname + '/src/service',
+      image: __dirname + '/src/image'
+    }
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new webpack.optimize.CommonsChunkPlugin({

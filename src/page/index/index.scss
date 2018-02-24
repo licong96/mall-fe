@@ -1,17 +1,6 @@
-h1 {
-  color: red;
-}
-.box {
-  width: 200px;
-  height: 200px;
-  .main {
-    position: relative;
-    .desc {
-      position: absolute;
-      top: 50%;
-      left: 10px;
-    }
-  }
+
+body {
+  // background: red;
 }
 .text {
   display: flex;
@@ -20,14 +9,6 @@ h1 {
   box-shadow: 0 0 4px 2px #333;
   transform: translate(20px, 30px);
   background: url("../../image/icon.png");
-}
-@keyframes name {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
 }
 @media (min-resolution: 2dppx) {
     .image {

@@ -1,0 +1,23 @@
+// 公用样式
+
+.w {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  width: 1080px;
+}
+.hide {
+  display: none;
+}
+.link {
+  color: #999;
+  cursor: pointer;
+  text-decoration: none;
+  &.hover {
+    color: #e80012;
+  }
+}
+.link-text {
+  color: #999;
+  text-decoration: none;
+}

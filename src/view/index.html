@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <%= require('html-loader!./head.html') %>
+  <%= require('html-loader!./layout/header-common.html') %>
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
-
 <body>
-  <h1>index</h1>
-</body>
+  <h1>hello</h1>
 
+  <%= require('html-loader!./layout/footer-common.html') %>
+</body>
 </html>
