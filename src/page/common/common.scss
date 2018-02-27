@@ -1,5 +1,13 @@
 // 公用样式
-
+.flex {
+  display: flex;
+}
+.around {
+  justify-content: space-around;
+}
+.between {
+  justify-content: space-between;
+}
 .w {
   overflow: hidden;
   position: relative;
@@ -13,7 +21,7 @@
   color: #999;
   cursor: pointer;
   text-decoration: none;
-  &.hover {
+  &:hover {
     color: #e80012;
   }
 }

@@ -1,0 +1,33 @@
+@import "../../common/mixin";
+
+.header {
+  margin: 50px 0;
+  .logo {
+    display: block;
+    font-size: 36px;
+    color: #c60023;
+  }
+  .search-con {
+    display: flex;
+    align-items: center;
+    width: 550px;
+    height: 40px;
+    background-color: #fff;
+    .search-input {
+      flex: 1;
+      border: 2px solid $color-red-thin;
+      padding: 0 15px;
+      height: 100%;
+      // &:visited {
+      //   box-shadow: 0 0 2px $color-red-thin;
+      // }
+    }
+    .search-btn {
+      width: 80px;
+      height: 100%;
+      font-size: 18px;
+      color: #fff;
+      background-color: $color-red-thin;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.nav {
+  height: 30px;
+  line-height: 30px;
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+  .user {
+    float: left;
+    &.login {
+      display: none;
+    }
+  }
+  .not-login {
+    .link {
+      margin-right: 10px;
+    }
+  }
+  .nav-list {
+    float: right;
+    .nav-item {
+      display: inline-block;
+      .link {
+        margin-left: 10px;
+      }
+    }
+  }
+  .link {
+    font-size: 14px;
+  }
+}

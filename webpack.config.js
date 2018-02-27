@@ -17,6 +17,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,              // 所有js文件转换es5
+        include: path.resolve(__dirname, 'src'),   // 指定这个文件夹
+        exclude: path.resolve(__dirname, 'node_modules'),  // 排除这个文件夹
+        loader: 'babel-loader'
+      },
+      {
         test: /\.css$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
@@ -26,7 +32,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader', 'sass-loader']
@@ -60,6 +65,7 @@ module.exports = {
   // 配置路径
   resolve: {
     alias: {
+      node_modules: __dirname + '/node_modules',
       util: __dirname + '/src/util',
       page: __dirname + '/src/page',
       service: __dirname + '/src/service',

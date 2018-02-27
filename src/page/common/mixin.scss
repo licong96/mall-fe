@@ -1,8 +1,13 @@
+// 颜色
+$color-red: #c60023;
+$color-red-thin: #e80012;
+
+// 媒体查询
 $SM: 320px;
 
 @mixin MQ($canvas) {
   @if $canvas == SM {
-    @media only screen and (max-width: $SM) { @content; } 
+    @media only screen and (max-width: $SM) { @content; }
   }
 }
 
