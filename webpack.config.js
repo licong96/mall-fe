@@ -7,7 +7,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
     'index': './src/page/index/index.js',
-    'login': './src/page/login/login.js'
+    'login': './src/page/login/index.js',
+    'result': './src/page/result/index.js',
   },
   output: {
     filename: 'js/[name].js',
@@ -16,6 +17,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.string$/,
+        exclude: /node_modules/,
+        loader: 'html-loader'
+      },
       {
         test: /\.js$/,              // 所有js文件转换es5
         include: path.resolve(__dirname, 'src'),   // 指定这个文件夹
@@ -80,7 +86,8 @@ module.exports = {
     }),
     new ExtractTextPlugin('css/[name].css'),
     new HtmlWebpackPlugin(HtmlPlugin('首页', 'index', ['common', 'index'])),
-    new HtmlWebpackPlugin(HtmlPlugin('登陆', 'login', ['common', 'login']))
+    new HtmlWebpackPlugin(HtmlPlugin('用户登录', 'login', ['common', 'login'])),
+    new HtmlWebpackPlugin(HtmlPlugin('操作结果', 'result', ['common', 'result'])),
   ],
   devtool: 'inline-source-map',
   devServer: {

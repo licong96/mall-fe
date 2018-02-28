@@ -1,0 +1,22 @@
+@import "../../common/mixin";
+
+.nav-side {
+  float: left;
+  width: 130px;
+  min-height: 100px;
+  .nav-item {
+    font-size: 14px;
+    line-height: 25px;
+    color: #666;
+    &.active {
+      .link {
+        color: $color-red;
+      }
+    }
+  }
+}
+.content.width-nav {
+  float: left;
+  width: 950px;
+}
+

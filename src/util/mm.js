@@ -43,7 +43,7 @@ var _mm = {
     return result ? decodeURIComponent(result[2]) : null;
   },
   //渲染html模版
-  rederHtml: function (htmlTemplate, data) {
+  renderHtml: function (htmlTemplate, data) {
     var template = Hogan.compile(htmlTemplate),
       result = template.render(data);
     return result;
