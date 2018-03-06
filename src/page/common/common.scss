@@ -1,4 +1,4 @@
-// 公用样式
+/* 公用样式 */
 .flex {
   display: flex;
 }
@@ -28,4 +28,12 @@
 .link-text {
   color: #999;
   text-decoration: none;
+}
+
+.btn {
+  border: none;
+  text-decoration: none;
+  &:active {
+    opacity: .9;
+  }
 }

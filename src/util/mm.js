@@ -4,7 +4,7 @@ var Hogan = require('hogan.js');
 var Swal = require('sweetalert');
 
 var conf = {
-  serverHost: ''
+  serverHost: ''      // webpack里面配置了 (/) ，所以这里不需要填写
 };
 
 var _mm = {

@@ -7,7 +7,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
     'index': './src/page/index/index.js',
-    'login': './src/page/login/index.js',
+    'user-login': './src/page/user-login/index.js',
+    'user-register': './src/page/user-register/index.js',
     'result': './src/page/result/index.js',
   },
   output: {
@@ -20,7 +21,8 @@ module.exports = {
       {
         test: /\.string$/,
         exclude: /node_modules/,
-        loader: 'html-loader'
+        // loader: 'html-loader'
+        loader: 'html-loader?attrs=img:src img:data-src'
       },
       {
         test: /\.js$/,              // 所有js文件转换es5
@@ -86,7 +88,8 @@ module.exports = {
     }),
     new ExtractTextPlugin('css/[name].css'),
     new HtmlWebpackPlugin(HtmlPlugin('首页', 'index', ['common', 'index'])),
-    new HtmlWebpackPlugin(HtmlPlugin('用户登录', 'login', ['common', 'login'])),
+    new HtmlWebpackPlugin(HtmlPlugin('用户登录', 'user-login', ['common', 'user-login'])),
+    new HtmlWebpackPlugin(HtmlPlugin('用户注册', 'user-register', ['common', 'user-register'])),
     new HtmlWebpackPlugin(HtmlPlugin('操作结果', 'result', ['common', 'result'])),
   ],
   devtool: 'inline-source-map',
@@ -96,7 +99,15 @@ module.exports = {
     inline: true,
     quiet: true,    // 开启错误提示
     // host: '',
-    port: 8080
+    port: 8080,
+    historyApiFallback: true,
+    overlay: true,  // 将错误显示在html之上
+    proxy: {
+      '/': {
+        target: 'http://www.happymmall.com',
+        changeOrigin: true
+      }
+    }
   }
 };
 

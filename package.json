@@ -10,6 +10,7 @@
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
     "hogan.js": "^3.0.2",
     "sweetalert": "^2.1.0"
