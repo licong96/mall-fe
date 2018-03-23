@@ -47,10 +47,11 @@ var userLogin = {
         validateResult = this.formValidate(formData);
     
     if (validateResult.status) {
+      this.formError.hide.call(this)
       _user.login(formData, function (res) {
+        _mm.setCookie('mmall_login_token', 'D6E784CC6FD1A0B2BDB2E4F436128570')   // 登陆验证出现问题，原因是Cookie
         window.location.href = _mm.getUrlParam('redirect') || './index.html';   // 跳回来的地址
       }, (errMsg) => {
-        console.log('call', this)
         this.formError.show.call(this, errMsg)
       })
     } 

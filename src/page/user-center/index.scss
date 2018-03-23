@@ -1,0 +1,32 @@
+@import "../common/mixin";
+
+.page-wrap {
+  margin-top: 30px;
+  .content {
+    float: left;
+    width: 950px;
+    .list {
+      line-height: 30px;
+      font-size: 16px;
+      .name {
+        color: #666;
+      }
+      .desc {
+        color: #333;
+      }
+    }
+    .btn {
+      margin-top: 20px;
+      border-radius: 4px;
+      padding: 10px 30px;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      background-color: $color-red-thin;
+    }
+    .fa {
+      font-size: 30px;
+      color: #999;
+    }
+  }
+}

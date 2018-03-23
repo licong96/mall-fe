@@ -1,11 +1,12 @@
-require('./index.scss');
 require('../common/common.js')
+require('./index.scss');
 
 require('page/layout/nav-simple/index.js');
 require('page/layout/footer/index.js');
 
 var _mm = require('util/mm.js');
 var _user = require('service/user-service');
+
 
 // user-register
 var userRegister = {
@@ -30,19 +31,17 @@ var userRegister = {
   },
   bindEvent: function () {
     // 输入完成后，验证用户名
+    let _this = this
     this.Dom.username.on('blur', function() {
       var username = $.trim($(this).val());
       if (!username) {
         return;
       }
+      
       _user.checkUsername(username, (res) => {
-        alert('1')
-        if (res.data.status !== 0) {
-          this.formError.show.call(this,res.data.msg)
-        }
-        // this.formError.hide.call(this)
+        _this.formError.hide.call(_this)
       }, (errMsg) => {
-        this.formError.show.call(this)
+        _this.formError.show.call(_this, errMsg)
       })
     })
 
@@ -69,15 +68,14 @@ var userRegister = {
         // 表单验证结果
         validateResult = this.formValidate(formData);
     
-    if (validateResult.status) {
+    if (validateResult.status) {    // 验证通过
       _user.register(formData, function (res) {
         window.location.href = './result.html?type=register'
       }, (errMsg) => {
         this.formError.show.call(this, errMsg)
       })
     } 
-    // 验证失败
-    else {
+    else {    // 验证失败
       this.formError.show.call(this, validateResult.msg)
     }
   },

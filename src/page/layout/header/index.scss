@@ -31,3 +31,16 @@
     }
   }
 }
+// 面包屑导航
+.crumb {
+  border-top: 2px solid $color-red-thin;
+  height: 50px;
+  line-height: 50px;
+  color: #888;
+  background-color: #eee;
+  .fa {
+    padding: 0 4px;
+    font-size: 18px;
+    color: #999;
+  }
+}

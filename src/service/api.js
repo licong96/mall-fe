@@ -1,16 +1,12 @@
 import fetch from 'util/fetch'
 
-// 加载标签选项
-export function InquiryTag() {
+export function checkUser(username) {
   const params = {
-    todo: 'Reference',
-    type: 'SelectByNameToJson',
-    needpurview: true,
-    valiurl: document.URL,
-    RefName: 'InquiryTag'
+    type: 'username',
+    str: username
   }
 
-  var url = '/Handler/Handler.ashx'
+  var url = '/user/check_valid.do'
 
-  return fetch('get', url, params)
+  return fetch('POST', url, params)
 }

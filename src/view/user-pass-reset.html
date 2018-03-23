@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%= require('html-loader!./layout/header-common.html') %>
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+  <%= require('html-loader!./layout/nav-simple.html') %>
+
+    <div class="page-wrap">
+      <div class="w">
+        <div class="user-con">
+          <div class="user-title">找回密码</div>
+          <div class="user-box">
+            <div class="error-item" style="display: none;">
+              <i class="fa fa-minus-circle error-icon"></i>
+              <p class="err-msg">error</p>
+            </div>
+            <div class="next step_username">
+              <p class="title">请输入用户名：</p>
+              <div class="user-item">
+                <label for="username" class="user-label">
+                  <i class="fa fa-user"></i>
+                </label>
+                <input class="user-content" id="username" type="text" placeholder="请输入用户名" autocomplete="off">
+              </div>
+              <button class="btn btn-danger" id="submit-username">下一步</button>
+            </div>
+            <div class="next step_question">
+              <p class="title">密码提示问题是：<span class="question_title"></span></p>
+              <div class="user-item">
+                <label for="answer" class="user-label">
+                  <i class="fa fa-question"></i>
+                </label>
+                <input class="user-content" id="answer" type="text" placeholder="请输入密码提示问题答案" autocomplete="off">
+              </div>
+              <button class="btn btn-danger" id="submit-answer">下一步</button>
+            </div>
+            <div class="next step_password">
+              <p class="title">请输入新密码：</p>
+              <div class="user-item">
+                <label for="password" class="user-label">
+                  <i class="fa fa-lock"></i>
+                </label>
+                <input class="user-content" id="password" type="password" placeholder="请输入新密码" autocomplete="off">
+              </div>
+              <button class="btn btn-danger" id="submit-password">下一步</button>
+            </div>
+            <div class="link-item">
+              <a href="./user-login.html" class="link" target="_blank">返回登录</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= require('html-loader!./layout/footer.html') %>
+</body>
+
+</html>

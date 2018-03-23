@@ -1,3 +1,9 @@
+@import "./mixin";
+
+html,body {
+  min-height: 100%;
+  background-color: #f5f5f5;
+}
 /* 公用样式 */
 .flex {
   display: flex;
@@ -13,6 +19,9 @@
   position: relative;
   margin: 0 auto;
   width: 1080px;
+}
+.text-center {
+  text-align: center
 }
 .hide {
   display: none;
@@ -34,6 +43,22 @@
   border: none;
   text-decoration: none;
   &:active {
-    opacity: .9;
+    opacity: .8;
+  }
+  &:hover {
+    background-color: $color-red-light !important;
+  }
+}
+
+// parel
+.panel{
+  margin-bottom: 10px;
+  background-color: #fff;
+  .panel-title {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .panel-body {
+    padding: 20px;
   }
 }

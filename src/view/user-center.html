@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= require('html-loader!./layout/header-common.html') %>
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <%= require('html-loader!./layout/nav.html') %>
+  <%= require('html-loader!./layout/header.html') %>
+
+  <div class="crumb">
+    <div class="w">
+      <div class="crumb-con">
+        <a href="./index.html" class="link">MMall</a>
+        <i class="fa fa-angle-right"></i>
+        <span class="link-text">我的个人信息</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-wrap w">
+    <!-- 导航 -->
+    <%= require('html-loader!./layout/nav-side.html') %>
+    <div class="content with-nav">
+      <div class="panel">
+        <div class="panel-title">个人中心</div>
+        <div class="panel-body">
+          <ul class="user-info">
+            <div class="text-center">
+              <i class="fa fa-spinner fa-pulse"></i>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

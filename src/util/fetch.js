@@ -14,11 +14,25 @@ export default function fetch(method, url, params) {
           reject(err)
         })
     } else {
-      axios.post(url, data)
-        .then(res => {
+      axios({
+        url: url,
+        method: 'post',
+        data: data,
+        transformRequest: [function (data) {
+          let ret = ''
+          for (let it in data) {
+            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+          }
+          return ret
+        }],
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'   // 头信息改成from-data
+        }
+      }).then(res => {
           resolve(res)
         })
         .catch(err => {
+          alert('catch：' + err)
           reject(err)
         })
     }

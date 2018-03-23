@@ -11,8 +11,8 @@ navSide.init({
   name: 'user-center'
 });
 
-import { InquiryTag } from 'service/api'
+// import { InquiryTag } from 'service/api'
 
-InquiryTag().then(res => {
-  console.log(res)
-})
+// InquiryTag().then(res => {
+//   console.log(res)
+// })

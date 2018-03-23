@@ -8,11 +8,24 @@
   <%= require('html-loader!./layout/nav-simple.html') %>
 
   <div class="page-wrap w">
-    <div class="result-con">
-      <h2 class="title register-success">恭喜您，注册成功！</h2>
-      <h2 class="title default-success">恭喜您，操作成功！</h2>
+    <div class="result-con register-success">
+      <h2 class="title">恭喜您，注册成功！</h2>
       <div class="content">
         <a href="./index.html" class="link">回到首页</a>
+        <a href="./user-login.html" class="link">立即去登陆</a>
+      </div>
+    </div>
+    <div class="result-con default-success">
+      <h2 class="title">恭喜您，操作成功！</h2>
+      <div class="content">
+        <a href="./index.html" class="link">回到首页</a>
+      </div>
+    </div>
+    <div class="result-con pass-reset-success">
+      <h2 class="title">恭喜您，重置密码成功</h2>
+      <div class="content">
+        <a href="./index.html" class="link">回到首页</a>
+        <a href="./user-login.html" class="link">立即去登陆</a>
       </div>
     </div>
   </div>

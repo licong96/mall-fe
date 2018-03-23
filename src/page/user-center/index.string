@@ -1,0 +1,6 @@
+
+<li class="list">
+  <span class="name">用户名：</span>
+  <span class="desc">黎聪</span>
+</li>
+<button class="btn">编辑</button>

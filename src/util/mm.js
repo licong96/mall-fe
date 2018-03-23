@@ -18,7 +18,7 @@ var _mm = {
       data: param.data || {},
       success: function (res) {
         if (res.status === 0) {
-          typeof param.success === 'function' && param.success(res.data, res.msg);
+          typeof param.success === 'function' && param.success(res, res.msg);
         }
         else if (res.status === 10) {   // 没有登录
           _this.doLogin()
@@ -28,6 +28,7 @@ var _mm = {
         }
       },
       error: function (err) {
+        console.log('catch', err)
         typeof param.error === 'function' && param.error(err.status);
       }
     })
@@ -54,7 +55,7 @@ var _mm = {
   },
   // 失败提示
   errorTips: function (msg, title) {
-    Swal(title || '操作提示', msg || '失败', "error");
+    Swal(title || '提示', msg || '失败', "error");
   },
   // 字段验证，支持非空、手机号、邮箱号
   validate: function (value, type) {
@@ -79,7 +80,30 @@ var _mm = {
   // 跳首页
   goHome: function () {
     window.location.href = './index.html';
-  }
+  },
+  setCookie(name, value) {
+    var Days = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+  },
+  getCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg)) {
+      return unescape(arr[2]);
+    }
+    else {
+      return null;
+    }
+  },
+  delCookie(name) {
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval = getCookie(name);
+    if (cval != null) {
+      document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+    }
+  } 
 };
 
 module.exports = _mm;

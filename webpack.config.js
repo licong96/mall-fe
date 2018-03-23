@@ -7,9 +7,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
     'index': './src/page/index/index.js',
+    'result': './src/page/result/index.js',
     'user-login': './src/page/user-login/index.js',
     'user-register': './src/page/user-register/index.js',
-    'result': './src/page/result/index.js',
+    'user-pass-reset': './src/page/user-pass-reset/index.js',
+    'user-center': './src/page/user-center/index.js',
   },
   output: {
     filename: 'js/[name].js',
@@ -88,9 +90,11 @@ module.exports = {
     }),
     new ExtractTextPlugin('css/[name].css'),
     new HtmlWebpackPlugin(HtmlPlugin('首页', 'index', ['common', 'index'])),
+    new HtmlWebpackPlugin(HtmlPlugin('操作结果', 'result', ['common', 'result'])),
     new HtmlWebpackPlugin(HtmlPlugin('用户登录', 'user-login', ['common', 'user-login'])),
     new HtmlWebpackPlugin(HtmlPlugin('用户注册', 'user-register', ['common', 'user-register'])),
-    new HtmlWebpackPlugin(HtmlPlugin('操作结果', 'result', ['common', 'result'])),
+    new HtmlWebpackPlugin(HtmlPlugin('找回密码', 'user-pass-reset', ['common', 'user-pass-reset'])),
+    new HtmlWebpackPlugin(HtmlPlugin('个人中心', 'user-center', ['common', 'user-center'])),
   ],
   devtool: 'inline-source-map',
   devServer: {
@@ -98,8 +102,8 @@ module.exports = {
     compress: true,
     inline: true,
     quiet: true,    // 开启错误提示
-    // host: '',
-    port: 8080,
+    host: '192.168.0.200',
+    // port: 8088,
     historyApiFallback: true,
     overlay: true,  // 将错误显示在html之上
     proxy: {
