@@ -44,4 +44,6 @@ var header = {
   }
 };
 
-header.init();
+$(function () {
+  header.init();
+});

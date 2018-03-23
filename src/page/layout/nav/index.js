@@ -31,9 +31,7 @@ var nav = {
   },
   // 加载用户信息
   loadUserInfo() {
-    // getUserInfo
     _user.checkLogin(res => {
-      console.log(res)
       $('.user.not-login').hide().siblings('.user.login').show().find('.user-name').text(res.data.username);
     }, err => {
       console.log(err)

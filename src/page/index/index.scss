@@ -1,10 +1,5 @@
 
 .text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 4px 2px #333;
-  transform: translate(20px, 30px);
   background: url("../../image/icon.png");
 }
 @media (min-resolution: 2dppx) {
