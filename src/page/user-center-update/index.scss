@@ -6,13 +6,18 @@
     float: left;
     width: 950px;
     .list {
-      line-height: 36px;
+      margin-bottom: 12px;
       font-size: 16px;
       .name {
         color: #666;
       }
-      .desc {
-        color: #333;
+      .input {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 6px 10px;
+        &:focus {
+          box-shadow: 0 0 3px $color-red;
+        }
       }
     }
     .btn {

@@ -93,6 +93,16 @@ var _user = {
       error: reject
     })
   },
+  // 更新个人信息
+  updateUserInfo: function (userInfo, resolve, reject) {
+    _mm.request({
+      url : _mm.getServerUrl('/user/logout.do'),
+      method: 'POST',
+      data: userInfo,
+      success: resolve,
+      error: reject
+    })
+  },
 };
 
 module.exports = _user;

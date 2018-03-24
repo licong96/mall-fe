@@ -32,7 +32,7 @@ var nav = {
   // 加载用户信息
   loadUserInfo() {
     _user.checkLogin(res => {
-      $('.user.not-login').hide().siblings('.user.login').show().find('.user-name').text(res.data.username);
+      $('.user.not-login').hide().siblings('.user.login').show().find('.user-name').text(res.username);
     }, err => {
       console.log(err)
     });

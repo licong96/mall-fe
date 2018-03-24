@@ -1,7 +1,7 @@
 require('../common/common.js')
 require('./index.scss')
 
-require('page/layout/nav/index.js');
+// require('page/layout/nav/index.js');
 require('page/layout/header/index.js');
 require('page/layout/footer/index.js');
 
@@ -9,6 +9,7 @@ require('page/layout/footer/index.js');
 var navSide = require('page/layout/nav-side/index')
 var _mm = require('util/mm.js');
 var _user = require('service/user-service');
+var templateIndex = require('./index.string');
 
 var userCenter = {
   Dom: {
@@ -20,7 +21,6 @@ var userCenter = {
     })
     // 加载用户信息
     this.loadUserInfo();
-    this.bindEvent();
   },
   loadUserInfo() {
     var userHtml = ''
@@ -31,8 +31,6 @@ var userCenter = {
       _mm.errorTips(err)
     })
   },
-  bindEvent: function () {
-  }
 };
 
 

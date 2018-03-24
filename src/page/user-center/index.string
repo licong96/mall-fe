@@ -1,6 +1,22 @@
 
 <li class="list">
   <span class="name">用户名：</span>
-  <span class="desc">黎聪</span>
+  <span class="desc">{{username}}</span>
 </li>
-<button class="btn">编辑</button>
+<li class="list">
+  <span class="name">手机号：</span>
+  <span class="desc">{{phone}}</span>
+</li>
+<li class="list">
+  <span class="name">邮箱号：</span>
+  <span class="desc">{{email}}</span>
+</li>
+<li class="list">
+  <span class="name">密码问题：</span>
+  <span class="desc">{{question}}</span>
+</li>
+<li class="list">
+  <span class="name">问题答案：</span>
+  <span class="desc">{{answer}}</span>
+</li>
+<a class="btn btn_edit" href="./user-center-update.html">编辑</a>

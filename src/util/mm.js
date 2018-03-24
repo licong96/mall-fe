@@ -18,10 +18,10 @@ var _mm = {
       data: param.data || {},
       success: function (res) {
         if (res.status === 0) {
-          typeof param.success === 'function' && param.success(res, res.msg);
+          typeof param.success === 'function' && param.success(res.data, res.msg);
         }
         else if (res.status === 10) {   // 没有登录
-          _this.doLogin()
+          // _this.doLogin()
         }
         else if (res.status === 1) {    // 数据错误
           typeof param.success === 'function' && param.error(res.msg);
@@ -75,7 +75,7 @@ var _mm = {
   },
   // 统一登录处理
   doLogin: function () {
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   // 跳首页
   goHome: function () {

@@ -34,8 +34,8 @@ var userPassRest = {
         _user.getQuestion(username, res => {
           this.formError.hide.call(this)
           this.data.username = username;    // 保存用户
-          this.data.question = res.data;
-          this.loadStepQuestion(res.data);
+          this.data.question = res;
+          this.loadStepQuestion(res);
         }, err => {
           this.formError.show.call(this, err)
         })
@@ -55,7 +55,7 @@ var userPassRest = {
         }, res => {
           this.formError.hide.call(this)
           this.data.answer = answer;
-          this.data.token = res.data;
+          this.data.token = res;
           this.loadStepPassword();
         }, err => {
           this.formError.show.call(this, err)

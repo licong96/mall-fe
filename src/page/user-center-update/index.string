@@ -1,0 +1,21 @@
+<li class="list">
+  <span class="name">用户名：</span>
+  <span class="desc">{{username}}</span>
+</li>
+<li class="list">
+  <span class="name">手机号：</span>
+  <input type="text" class="input" id="phone" autocomplete="off" value="{{phone}}">
+</li>
+<li class="list">
+  <span class="name">邮箱号：</span>
+  <input type="text" class="input" id="email" autocomplete="off" value="{{email}}">
+</li>
+<li class="list">
+  <span class="name">密码问题：</span>
+  <input type="text" class="input" id="question" autocomplete="off" value="{{question}}">
+</li>
+<li class="list">
+  <span class="name">问题答案：</span>
+  <input type="text" class="input" id="answer" autocomplete="off" value="{{answer}}">
+</li>
+<button type="button" class="btn btn_submit">提交</button>

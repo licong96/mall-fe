@@ -49,7 +49,7 @@ var userLogin = {
     if (validateResult.status) {
       this.formError.hide.call(this)
       _user.login(formData, function (res) {
-        _mm.setCookie('mmall_login_token', 'D6E784CC6FD1A0B2BDB2E4F436128570')   // 登陆验证出现问题，原因是Cookie
+        // _mm.setCookie('mmall_login_token', '73BD2A01A402183BA70FC9065F40447C')   // 登陆验证出现问题，原因是Cookie，要经常手动更新
         window.location.href = _mm.getUrlParam('redirect') || './index.html';   // 跳回来的地址
       }, (errMsg) => {
         this.formError.show.call(this, errMsg)
