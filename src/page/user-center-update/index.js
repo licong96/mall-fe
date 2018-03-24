@@ -50,9 +50,9 @@ var userCenterUpdate = {
       if (validateResult.status) {
         _user.updateUserInfo(userInfo, res => {
           _mm.successTips(res)
-          // window.location.href = './user-center.html'
+          window.location.href = './user-center.html'
         }, err => {
-          _mm-errorTips(err)
+          _mm.errorTips(err)
         })
       }
       else {

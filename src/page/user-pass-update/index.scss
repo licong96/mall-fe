@@ -1,0 +1,38 @@
+@import "../common/mixin";
+
+.page-wrap {
+  margin-top: 30px;
+  .content {
+    float: left;
+    width: 950px;
+    .list {
+      margin-bottom: 12px;
+      font-size: 16px;
+      .name {
+        color: #666;
+      }
+      .input {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 6px 10px;
+        &:focus {
+          box-shadow: 0 0 3px $color-red;
+        }
+      }
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      border-radius: 4px;
+      padding: 10px 30px;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      background-color: $color-red-thin;
+    }
+    .fa {
+      font-size: 30px;
+      color: #999;
+    }
+  }
+}

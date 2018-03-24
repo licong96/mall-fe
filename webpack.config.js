@@ -11,6 +11,7 @@ module.exports = {
     'user-login': './src/page/user-login/index.js',
     'user-register': './src/page/user-register/index.js',
     'user-pass-reset': './src/page/user-pass-reset/index.js',
+    'user-pass-update': './src/page/user-pass-update/index.js',
     'user-center': './src/page/user-center/index.js',
     'user-center-update': './src/page/user-center-update/index.js',
   },
@@ -97,6 +98,7 @@ module.exports = {
     new HtmlWebpackPlugin(HtmlPlugin('找回密码', 'user-pass-reset', ['common', 'user-pass-reset'])),
     new HtmlWebpackPlugin(HtmlPlugin('个人中心', 'user-center', ['common', 'user-center'])),
     new HtmlWebpackPlugin(HtmlPlugin('修改个人信息', 'user-center-update', ['common', 'user-center-update'])),
+    new HtmlWebpackPlugin(HtmlPlugin('修改密码', 'user-pass-update', ['common', 'user-pass-update'])),
   ],
   devtool: 'inline-source-map',
   devServer: {
