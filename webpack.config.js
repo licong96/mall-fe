@@ -7,6 +7,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
     'index': './src/page/index/index.js',
+    'list': './src/page/list/index.js',
     'result': './src/page/result/index.js',
     'user-login': './src/page/user-login/index.js',
     'user-register': './src/page/user-register/index.js',
@@ -92,6 +93,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('css/[name].css'),
     new HtmlWebpackPlugin(HtmlPlugin('首页', 'index', ['common', 'index'])),
+    new HtmlWebpackPlugin(HtmlPlugin('商品列表', 'list', ['common', 'list'])),
     new HtmlWebpackPlugin(HtmlPlugin('操作结果', 'result', ['common', 'result'])),
     new HtmlWebpackPlugin(HtmlPlugin('用户登录', 'user-login', ['common', 'user-login'])),
     new HtmlWebpackPlugin(HtmlPlugin('用户注册', 'user-register', ['common', 'user-register'])),
@@ -106,8 +108,8 @@ module.exports = {
     compress: true,
     inline: true,
     quiet: true,    // 开启错误提示
-    // host: '192.168.0.200',
-    host: '192.168.25.206',
+    host: '192.168.0.200',
+    // host: '192.168.25.206',
     port: 8080,
     historyApiFallback: true,
     overlay: true,  // 将错误显示在html之上
