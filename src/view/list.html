@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%= require('html-loader!./layout/header-common.html') %>
-  <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
 </head>
+
 <body>
-  <%= require('html-loader!./layout/nav-simple.html') %>
+  <%= require('html-loader!./layout/nav.html') %>
+  <%= require('html-loader!./layout/header.html') %>
+  <div class="crumb">
+    <div class="w">
+      <div class="crumb-con">
+        <a href="./index.html" class="link">MMall</a>
+        <i class="fa fa-angle-right"></i>
+        <span class="link-text">
+          <%= htmlWebpackPlugin.options.title %>
+        </span>
+      </div>
+    </div>
+  </div>
 
   <div class="page-wrap w">
-    
+    <div class="sort-con">
+      <span class="sort-item">默认排序</span>
+      <span class="sort-item sort-desc">
+        价格
+        <i class="arrows up"></i>
+        <i class="arrows down"></i>
+      </span>
+    </div>
+    <div class="list-con">
+      <span class="center">
+        <i class="fa fa-spinner fa-pulse"></i>
+      </span>
+    </div>
   </div>
 
   <%= require('html-loader!./layout/footer.html') %>
 </body>
+
 </html>

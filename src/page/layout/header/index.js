@@ -11,6 +11,7 @@ var header = {
   },
   init: function () {
     this.bindEvent();
+    this.onLoad();
   },
   onLoad: function () {
     // 参数填入搜索框
