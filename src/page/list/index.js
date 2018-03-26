@@ -24,6 +24,7 @@ var list = {
   },
   init() {
     this.loadList();
+    this.bindEvent();
   },
   onLoad() {
 
